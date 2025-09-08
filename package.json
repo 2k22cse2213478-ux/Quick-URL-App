@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
-    "preview": "npx vite preview --port 3000"
+    "build": "node build.js",
+    "preview": "vite preview --port 3000"
   },
   "dependencies": {
     "nanoid": "^5.0.7",
