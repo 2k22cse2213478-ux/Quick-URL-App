@@ -1,24 +1,76 @@
 
-# Quick URL App (Frontend Only)
+# Quick URL App 
 
-Tech: React 18 + Vite (runs on **localhost:3000**), Vanilla CSS, React Router.
-No console logging — a custom Logging Middleware stores logs in `localStorage`.
+A modern URL shortening web application built using React 18 and Vite.  
+The application runs entirely on the client side and provides URL shortening, analytics tracking, and logging using browser localStorage, with no backend dependency.
 
-## Run Locally
+---
+
+## Tech Stack
+
+- React 18
+- Vite
+- React Router
+- Vanilla CSS
+- localStorage (Client-Side Persistence)
+
+Note: The application does not use console logging. A custom logging middleware captures and stores structured logs in localStorage.
+
+---
+
+## Getting Started (Run Locally)
+
+### Prerequisites
+- Node.js (v16 or higher recommended)
+- npm
+
+### Installation and Run
+
 ```bash
-npm i
+npm install
 npm run dev
 ```
-This opens `http://localhost:3000`.
+- The application will start on:
+```
+http://localhost:3000
+```
 
-## Pages
-- `/` Shortener: add up to 5 URLs, each with optional validity (minutes, default 30) and optional preferred shortcode.
-- `/stats` Statistics: list all shortened URLs with creation/expiry and click analytics (timestamp, referrer, timezone).
-- `/:code` Redirect: client-side route that records a click and redirects to the original URL.
 
-## Persistence
-All data is stored in `localStorage`: URLs, per-code clicks, and structured logs (no console logs).
+## Features
 
+- Create shortened URLs with:
+
+-- Optional custom shortcode
+
+-- Optional validity period (default: 30 minutes)
+
+- Expiry handling: expired links do not redirect and display an informational message
+
+- Click analytics including:
+
+-- Timestamp
+
+-- Referrer
+
+-- User timezone (coarse location)
+
+- Shortcode uniqueness enforcement with client-side collision detection
+
+- Persistent data storage using browser localStorage
+
+- Custom logging middleware (no console logs)
+
+## Data Persistence
+
+All application data is stored in browser localStorage, including:
+
+- Shortened URL records
+
+- Per-shortcode click history
+
+- Structured application logs
+
+No external APIs or backend services are required.
 ## Project Structure
 ```
 src/
@@ -29,7 +81,25 @@ src/
 ```
 
 ## Notes
-- Shortcode uniqueness is enforced. Collisions (custom code) show client-side errors.
-- Expired links do not redirect; they show an info message.
-- "Coarse location" uses the browser timezone (no external APIs needed).
-```
+
+- Shortcode collisions for custom codes are handled with client-side validation errors
+
+- Expired links do not redirect
+
+- Coarse location tracking is based on browser timezone
+
+- This is a frontend-only application
+
+## Future Enhancements
+
+- Backend integration (Node.js or Firebase)
+
+- Authentication and user-based URL management
+
+- Export analytics to CSV
+
+- QR code generation for shortened URLs
+
+## Author
+
+**Gargi Mishra**
