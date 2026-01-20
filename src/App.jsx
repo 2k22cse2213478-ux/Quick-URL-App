@@ -40,7 +40,7 @@ export default function App() {
       </div>
       <nav className="navbar" style={{zIndex:2, position:'relative'}}>
         <div className="nav-inner container">
-          <div className="brand">Affordmed URL Shortener</div>
+          <div className="brand">Quick URL App</div>
           <div className="nav-links">
             <NavLink to="/" end>Shorten</NavLink>
             <NavLink to="/stats">Stats</NavLink>

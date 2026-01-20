@@ -1,11 +1,14 @@
 // build.js
 import { build } from "vite";
 
-build()
-  .then(() => {
+async function runBuild() {
+  try {
+    await build();
     console.log("✅ Vite build completed successfully");
-  })
-  .catch((err) => {
+  } catch (err) {
     console.error("❌ Vite build failed:", err);
     process.exit(1);
-  });
+  }
+}
+
+runBuild();

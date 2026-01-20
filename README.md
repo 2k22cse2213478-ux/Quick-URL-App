@@ -1,5 +1,5 @@
 
-# Affordmed URL Shortener (Frontend Only)
+# Quick URL App (Frontend Only)
 
 Tech: React 18 + Vite (runs on **localhost:3000**), Vanilla CSS, React Router.
 No console logging — a custom Logging Middleware stores logs in `localStorage`.
